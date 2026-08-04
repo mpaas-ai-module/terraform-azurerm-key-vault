@@ -6,8 +6,4 @@ terraform {
     }
   }
 }
-
-provider "azurerm" {
-  features {}
-
-}
+# PoC fork: embedded provider block removed (blocked depends_on/count/for_each)

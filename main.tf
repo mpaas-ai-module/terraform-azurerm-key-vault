@@ -2,7 +2,7 @@ data "azurerm_client_config" "current" {}
 
 # Creates a Key vault
 resource "azurerm_key_vault" "key_vault" {
-  name                            = var.keyvault_name
+  name                            = var.name
   location                        = var.location
   resource_group_name             = var.resource_group_name
   sku_name                        = var.sku_name
@@ -39,5 +39,6 @@ resource "azurerm_key_vault" "key_vault" {
       access_policy,
     ]
   }
+  # PoC fork: removed dangling depends_on (module "resource_group" does not exist in this module — broken at HEAD)
 
 }
